@@ -309,6 +309,53 @@ footer { border-top: 1px solid var(--line); padding-block: 26px; }
 .footer-inner { max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-4); }
 .footer-inner a:hover { color: var(--acc); }
 
+/* ---------- Projects: group labels ---------- */
+
+.grouplabel {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--acc); display: flex; align-items: center; gap: 14px;
+  margin: clamp(34px, 5vw, 56px) 0 22px;
+}
+.grouplabel::before { content: ""; width: 8px; height: 8px; background: var(--acc); border-radius: 2px; transform: rotate(45deg); flex: none; }
+.grouplabel::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* ---------- Featured project (real screenshots) ---------- */
+
+.feature {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 56px);
+  align-items: center; background: var(--bg-2); border: 1px solid var(--line); border-radius: 18px;
+  padding: clamp(24px, 3.5vw, 44px); overflow: hidden;
+}
+@media (max-width: 900px) { .feature { grid-template-columns: 1fr; } .feature-media { order: -1; } }
+.feature-info { display: grid; gap: 16px; min-width: 0; }
+.feature-info h3 { font-size: clamp(22px, 2.6vw, 30px); }
+.feature-info p { color: var(--text-2); font-size: 15.5px; }
+
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gallery .frame:first-child { grid-column: 1 / -1; }
+
+.frame { border-radius: 10px; overflow: hidden; background: var(--bg-3); border: 1px solid var(--line-2); box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+.frame-bar { height: 26px; background: var(--bg-2); display: flex; align-items: center; gap: 6px; padding: 0 11px; border-bottom: 1px solid var(--line); }
+.frame-bar i { width: 8px; height: 8px; border-radius: 50%; }
+.frame-bar i:nth-child(1){ background:#FF5F57 } .frame-bar i:nth-child(2){ background:#FEBC2E } .frame-bar i:nth-child(3){ background:#28C840 }
+.frame img { width: 100%; height: auto; display: block; }
+.frame.tall img { max-height: 300px; object-fit: cover; object-position: top; }
+
+/* ---------- Diagram cards ---------- */
+
+.card .diagram {
+  background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px;
+  padding: 16px; margin-bottom: 2px;
+}
+.card .diagram svg { width: 100%; height: auto; display: block; }
+.dg-node { fill: var(--bg-2); stroke: var(--line-2); }
+.dg-node.hot { stroke: var(--acc); }
+.dg-t { fill: var(--text); font-family: var(--font-head); font-weight: 600; }
+.dg-s { fill: var(--text-3); font-family: var(--font-mono); }
+.dg-arrow { stroke: var(--acc); fill: none; }
+.dg-arrowhead { fill: var(--acc); }
+.dg-acc { fill: var(--acc); font-family: var(--font-mono); }
+
 /* ---------- Reveal ---------- */
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }

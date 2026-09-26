@@ -24,7 +24,7 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">MENU</button>
     <div class="nav-links" id="nav-links">
       <a href="#findings">Findings</a>
-      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
       <a class="nav-cta" href="#contact">Contact</a>
@@ -157,35 +157,98 @@
   </div>
 </section>
 
-<!-- ============ RESEARCH ============ -->
-<section id="research" style="padding-top:0">
+<!-- ============ PROJECTS ============ -->
+<section id="projects" style="padding-top:0">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="accent">02</span> — Research &amp; Projects</span>
-      <h2>Security from the silicon up.</h2>
-      <p class="lede">Beyond bug bounty: low-level security research, applied cryptography, and Web3 auditing.</p>
+      <span class="eyebrow"><span class="accent">02</span> — Projects</span>
+      <h2>Eleven builds, four disciplines.</h2>
+      <p class="lede">Security research from the silicon up, plus the AI, data and full-stack work behind it. Architecture diagrams show how each one is built; the e-commerce platform ships with a live UI.</p>
     </div>
 
+    <!-- Featured: real screenshots -->
+    <div class="grouplabel reveal">Full-Stack Web</div>
+    <div class="feature reveal">
+      <div class="feature-info">
+        <span class="k" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)">Featured · shipped UI</span>
+        <h3>Full-Stack E-Commerce Platform</h3>
+        <p>A complete multi-role storefront: catalog and product browsing, a working cart and checkout, order tracking and a support centre. React SPA over a Node.js / Express REST API and PostgreSQL, with JWT-authenticated buyer, seller and admin roles, bcrypt hashing and Multer image uploads, all containerized with Docker Compose.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Node.js / Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT + bcrypt</span><span class="tag">Docker Compose</span></div>
+      </div>
+      <div class="feature-media">
+        <div class="gallery">
+          <div class="frame tall"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/ecommerce/home.jpg" alt="E-commerce home page" loading="lazy"></div>
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/ecommerce/catalog.jpg" alt="Product catalog with filters" loading="lazy"></div>
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/ecommerce/cart.jpg" alt="Shopping cart and checkout" loading="lazy"></div>
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/ecommerce/order-tracking.jpg" alt="Order tracking" loading="lazy"></div>
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/ecommerce/support.jpg" alt="Customer support centre" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security & Systems -->
+    <div class="grouplabel reveal">Security &amp; Systems Research</div>
     <div class="card-grid">
 
       <article class="card reveal">
         <span class="k">Confidential Computing</span>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 460 92" role="img">
+            <text class="dg-acc" x="134" y="20" text-anchor="middle" font-size="9">inject NMI / MCE</text>
+            <rect class="dg-node" x="0" y="30" width="118" height="48" rx="8"/>
+            <text class="dg-t" x="59" y="52" text-anchor="middle" font-size="12.5">Hypervisor</text>
+            <text class="dg-s" x="59" y="68" text-anchor="middle" font-size="9.5">untrusted</text>
+            <path class="dg-arrow" d="M118 54 H146" stroke-width="1.6"/><path class="dg-arrowhead" d="M146 50 L152 54 L146 58 Z"/>
+            <rect class="dg-node hot" x="152" y="30" width="150" height="48" rx="8"/>
+            <text class="dg-t" x="227" y="52" text-anchor="middle" font-size="12.5">Guest_Defense</text>
+            <text class="dg-s" x="227" y="68" text-anchor="middle" font-size="9.5">validate CPU state</text>
+            <path class="dg-arrow" d="M302 54 H334" stroke-width="1.6"/><path class="dg-arrowhead" d="M334 50 L340 54 L334 58 Z"/>
+            <rect class="dg-node" x="340" y="30" width="120" height="48" rx="8"/>
+            <text class="dg-t" x="400" y="52" text-anchor="middle" font-size="12.5">Confidential VM</text>
+            <text class="dg-s" x="400" y="68" text-anchor="middle" font-size="9.5">SEV-SNP / TDX</text>
+          </svg>
+        </div>
+        <span class="k">Computer Security · IBA</span>
         <h3>Attacking &amp; Defending Confidential VMs</h3>
-        <p>Built a testbed on AMD EPYC to reproduce hypervisor interrupt-injection attacks (HECKLER class) against AMD SEV-SNP and Intel TDX trusted execution environments, then proposed <span class="mono">Guest_Defense</span> — a guest-side mitigation validating that incoming interrupts match expected CPU state. Included reverse-engineering production Windows software to map control flow and licensing behavior.</p>
+        <p>Reproduced HECKLER-class hypervisor interrupt-injection against AMD SEV-SNP and Intel TDX on an AMD EPYC testbed, then proposed <span class="mono">Guest_Defense</span> — a guest-side gate that validates an incoming interrupt against expected CPU state. Also reverse-engineered production Windows software (Camtasia, VEGAS, 7-Zip).</p>
         <div class="tags"><span class="tag">SEV-SNP / TDX</span><span class="tag">QEMU / QMP</span><span class="tag">Reverse engineering</span><span class="tag">Python</span></div>
       </article>
 
       <article class="card reveal">
         <span class="k">Systems / Cryptography</span>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 460 118" role="img">
+            <rect class="dg-node" x="0" y="44" width="96" height="34" rx="8"/>
+            <text class="dg-t" x="48" y="65" text-anchor="middle" font-size="12">Input</text>
+            <path class="dg-arrow" d="M96 61 H128" stroke-width="1.6"/>
+            <path class="dg-arrow" d="M120 61 V16 H150" stroke-width="1.4"/>
+            <path class="dg-arrow" d="M120 61 V106 H150" stroke-width="1.4"/>
+            <path class="dg-arrowhead" d="M150 12 L156 16 L150 20 Z"/><path class="dg-arrowhead" d="M150 57 L156 61 L150 65 Z"/><path class="dg-arrowhead" d="M150 102 L156 106 L150 110 Z"/>
+            <rect class="dg-node hot" x="156" y="4" width="150" height="24" rx="7"/>
+            <text class="dg-t" x="231" y="20" text-anchor="middle" font-size="10.5">Kernel module · crypto/hash.h</text>
+            <rect class="dg-node" x="156" y="49" width="150" height="24" rx="7"/>
+            <text class="dg-t" x="231" y="65" text-anchor="middle" font-size="10.5">Custom system call</text>
+            <rect class="dg-node" x="156" y="94" width="150" height="24" rx="7"/>
+            <text class="dg-t" x="231" y="110" text-anchor="middle" font-size="10.5">User space · OpenSSL</text>
+            <path class="dg-arrow" d="M306 16 H330 V57 H344" stroke-width="1.4"/>
+            <path class="dg-arrow" d="M306 61 H344" stroke-width="1.6"/>
+            <path class="dg-arrow" d="M306 106 H330 V65 H344" stroke-width="1.4"/>
+            <path class="dg-arrowhead" d="M344 57 L350 61 L344 65 Z"/>
+            <rect class="dg-node" x="350" y="44" width="110" height="34" rx="8"/>
+            <text class="dg-t" x="405" y="61" text-anchor="middle" font-size="11.5">Benchmark</text>
+            <text class="dg-s" x="405" y="73" text-anchor="middle" font-size="9">boundary cost</text>
+          </svg>
+        </div>
+        <span class="k">Operating Systems · IBA</span>
         <h3>SHA-256 across kernel, user space &amp; syscalls</h3>
-        <p>Implemented SHA-256 three ways — a loadable kernel module over the kernel crypto API, a user-space build over OpenSSL, and a custom system call — across three purpose-built Linux kernels. Benchmarked the boundary-crossing overhead and analyzed the attack surface of running crypto in ring 0 versus user space.</p>
+        <p>Implemented SHA-256 three ways across three purpose-built Linux kernels — a loadable kernel module over the crypto API, a custom system call, and a user-space build over OpenSSL — then benchmarked the boundary-crossing overhead and analysed the ring-0 attack surface.</p>
         <div class="tags"><span class="tag">Linux kernel</span><span class="tag">C</span><span class="tag">Crypto API</span><span class="tag">Ring 0</span></div>
       </article>
 
       <article class="card reveal">
         <span class="k">Web3 Security</span>
         <h3>Smart-contract auditing</h3>
-        <p>Ongoing auditing of smart contracts through Cantina and Immunefi — reviewing DeFi contract logic for access-control, accounting and oracle-manipulation bug classes, and building Foundry proofs of concept.</p>
+        <p>Ongoing auditing through Cantina and Immunefi — reviewing DeFi contract logic for access-control, accounting and oracle-manipulation bug classes, and building Foundry proofs of concept.</p>
         <div class="tags"><span class="tag">Solidity</span><span class="tag">Foundry</span><span class="tag">Cantina</span><span class="tag">Immunefi</span></div>
       </article>
 
@@ -194,6 +257,104 @@
         <h3>CTF authoring &amp; applied crypto</h3>
         <p>Designed and authored the cybersecurity-track CTF challenges for the IBA Data Science Society and judged submissions. Completed the Symmetric Ciphers, Diffie-Hellman and Hash Functions tracks on CryptoHack.</p>
         <div class="tags"><span class="tag">CTF design</span><span class="tag">CryptoHack</span><span class="tag">Applied cryptography</span></div>
+      </article>
+
+    </div>
+
+    <!-- AI / ML -->
+    <div class="grouplabel reveal">AI / Machine Learning</div>
+    <div class="card-grid">
+
+      <article class="card reveal">
+        <span class="k">Final Year Project · Meezan Bank</span>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 460 92" role="img">
+            <rect class="dg-node" x="0" y="30" width="104" height="48" rx="8"/>
+            <text class="dg-t" x="52" y="52" text-anchor="middle" font-size="12">Teacher</text>
+            <text class="dg-s" x="52" y="68" text-anchor="middle" font-size="9">formula + MLP</text>
+            <text class="dg-acc" x="140" y="48" text-anchor="middle" font-size="9">distill</text>
+            <path class="dg-arrow" d="M104 54 H172" stroke-width="1.6"/><path class="dg-arrowhead" d="M172 50 L178 54 L172 58 Z"/>
+            <rect class="dg-node hot" x="178" y="30" width="132" height="48" rx="8"/>
+            <text class="dg-t" x="244" y="52" text-anchor="middle" font-size="12">Student · HistGBR</text>
+            <text class="dg-s" x="244" y="68" text-anchor="middle" font-size="9">93k records</text>
+            <path class="dg-arrow" d="M310 54 H342" stroke-width="1.6"/><path class="dg-arrowhead" d="M342 50 L348 54 L342 58 Z"/>
+            <rect class="dg-node" x="348" y="30" width="112" height="48" rx="8"/>
+            <text class="dg-t" x="404" y="52" text-anchor="middle" font-size="12">R² = 0.997</text>
+            <text class="dg-s" x="404" y="68" text-anchor="middle" font-size="9">MSE 3.12</text>
+          </svg>
+        </div>
+        <span class="k">AI Credit Scoring</span>
+        <h3>IntelliScore</h3>
+        <p>Led a four-person team building a bank-facing credit-scoring platform for Meezan Bank. A semi-supervised teacher-student distillation pipeline over 93k records cut validation MSE from 15.67 to 3.12 (R² 0.997), with a RAG-grounded LLM turning black-box scores into explainable narratives. Shipped in Django, PostgreSQL and Tailwind.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Distillation</span><span class="tag">RAG / LLM</span><span class="tag">Django</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Deep Learning Research</span>
+        <h3>Nested Learning &amp; Continual Adaptation</h3>
+        <p>Reproduced the core mechanisms of Nested Learning (2025) from scratch in PyTorch: nested fast/medium/slow optimizers, a Continuum Memory System on EMA shadow weights, and a self-modifying meta-learner — benchmarked against an MLP baseline to confirm optimization behaves as multi-rate memory.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Catastrophic forgetting</span><span class="tag">Meta-learning</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Text Analytics</span>
+        <h3>AI Résumé Generator</h3>
+        <p>Fine-tuned Llama-2 7B with LoRA on a curated 500-résumé corpus and grounded generation in a RAG layer to enforce structure and tone, outperforming baseline ChatGPT head-to-head.</p>
+        <div class="tags"><span class="tag">Llama-2 7B</span><span class="tag">LoRA</span><span class="tag">RAG</span></div>
+      </article>
+
+    </div>
+
+    <!-- Data, systems & hardware -->
+    <div class="grouplabel reveal">Data, Systems &amp; Hardware</div>
+    <div class="card-grid">
+
+      <article class="card reveal">
+        <span class="k">Big Data Engineering</span>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 460 76" role="img">
+            <rect class="dg-node" x="0" y="22" width="96" height="34" rx="8"/><text class="dg-t" x="48" y="43" text-anchor="middle" font-size="12">Kafka</text>
+            <path class="dg-arrow" d="M96 39 H120" stroke-width="1.6"/><path class="dg-arrowhead" d="M120 35 L126 39 L120 43 Z"/>
+            <rect class="dg-node hot" x="126" y="22" width="96" height="34" rx="8"/><text class="dg-t" x="174" y="43" text-anchor="middle" font-size="12">Spark</text>
+            <path class="dg-arrow" d="M222 39 H246" stroke-width="1.6"/><path class="dg-arrowhead" d="M246 35 L252 39 L246 43 Z"/>
+            <rect class="dg-node" x="252" y="22" width="104" height="34" rx="8"/><text class="dg-t" x="304" y="43" text-anchor="middle" font-size="11">HBase / Redis</text>
+            <path class="dg-arrow" d="M356 39 H380" stroke-width="1.6"/><path class="dg-arrowhead" d="M380 35 L386 39 L380 43 Z"/>
+            <rect class="dg-node" x="386" y="22" width="74" height="34" rx="8"/><text class="dg-t" x="423" y="43" text-anchor="middle" font-size="11">Dash</text>
+            <text class="dg-s" x="230" y="14" text-anchor="middle" font-size="9">Airflow DAGs · Docker</text>
+          </svg>
+        </div>
+        <span class="k">Big Data Analytics · IBA</span>
+        <h3>Real-Time E-Commerce Analytics Pipeline</h3>
+        <p>An end-to-end streaming platform over 3-4 GB of event data: Kafka ingest into a Hadoop/HBase and Redis layer, Spark processing, Airflow DAGs and Docker. Ran fraud detection, customer analytics and demand forecasting on one live pipeline with an observability dashboard.</p>
+        <div class="tags"><span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">HBase / Redis</span><span class="tag">Airflow</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Databases</span>
+        <h3>Student Forum Portal</h3>
+        <p>Full-stack discussion forum (React/TS over Node/TS and SQLite) with a normalized schema and foreign-key constraints, indexed hot columns, parameterized queries against SQL injection, and transactions for multi-step write consistency.</p>
+        <div class="tags"><span class="tag">React / TS</span><span class="tag">SQLite</span><span class="tag">SQL hardening</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">HCI / Product Design</span>
+        <h3>NayaPay Wallet Redesign</h3>
+        <p>Redesigned a Pakistani fintech wallet end to end — 250 high-fidelity Figma screens on an 11-component design system, plus a full mirrored Urdu right-to-left build (124 screens) across 12 flows.</p>
+        <div class="tags"><span class="tag">Figma</span><span class="tag">Design system</span><span class="tag">RTL / Urdu</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Parallel Computing</span>
+        <h3>Parallel Matrix Convolution</h3>
+        <p>Parallelized 2D convolution in C++ with OpenMP — four quadrants across 8 threads — cutting execution time over the serial baseline, with per-thread aggregation and file-based matrix I/O.</p>
+        <div class="tags"><span class="tag">C++</span><span class="tag">OpenMP</span><span class="tag">Multithreading</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Embedded / Digital Logic</span>
+        <h3>Autonomous Maze-Solving Robot</h3>
+        <p>Two from-scratch builds of a maze-solving car on three IR sensors: one in embedded C on Arduino, one as pure combinational hardware (no MCU, no firmware) derived via Karnaugh maps into four Boolean equations. Placed 3rd of 45 teams.</p>
+        <div class="tags"><span class="tag">Arduino</span><span class="tag">Digital logic</span><span class="tag">Karnaugh maps</span></div>
       </article>
 
     </div>
