@@ -74,7 +74,7 @@
             <span class="sev crit">Critical</span>
           </div>
           <p class="cls">Broken access control → exposed CI/CD credential → broken auth</p>
-          <p>A broken access-control flaw exposed internal environment secrets, including a Jenkins CI/CD Slack bot token that was then accepted as an authorized internal integration. That granted admin-level access to sensitive operational channels and visibility into a significant portion of the platform's infrastructure. Responsibly disclosed on a system handling biometric data for millions of devices.</p>
+          <p>A broken access-control flaw exposed internal environment secrets, including a Jenkins CI/CD Slack bot token that was then accepted as an authorized internal integration. That granted admin-level access to sensitive operational channels and internal infrastructure, reaching internal databases and servers. Responsibly disclosed on a biometric platform serving 100M+ users.</p>
           <div class="meta"><span>Platform: <b>Bugcrowd</b></span><span>Status: <b>Bounty awarded</b></span></div>
           <div class="find-proof">
             <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/proof/samsung-report.jpg" alt="Samsung Mobile Security portal showing report I-120529, Critical, with a 10000 USD reward for the Samsung Pass infrastructure exposure" loading="lazy"></div>
@@ -92,10 +92,10 @@
             <span class="sev crit">Critical</span>
           </div>
           <p class="cls">Broken access control (IDOR) → payment redirection</p>
-          <p>An access-control flaw in Seller Central let manipulated request parameters grant unauthorized read access and reroute seller payments, placing an estimated $50M in payment flow at risk. Reported through the vendor's security channel.</p>
-          <div class="meta"><span>Class: <b>IDOR</b></span><span>Status: <b>Disclosure in progress</b></span></div>
+          <p>A broken access-control flaw in Seller Central let any authenticated account reroute incoming funds on any merchant account, leaving all 100k+ Marketplace merchants exposed to fund drainage. Reported through the vendor's security channel.</p>
+          <div class="meta"><span>Class: <b>Broken access control</b></span><span>Reach: <b>100k+ merchants</b></span><span>Status: <b>Disclosure in progress</b></span></div>
         </div>
-        <div class="reward"><div class="amt">$50M</div><div class="lbl">Payment flow at risk</div></div>
+        <div class="reward"><div class="amt">$500M+</div><div class="lbl">Payment flow at risk</div></div>
       </article>
 
       <article class="find reveal">
