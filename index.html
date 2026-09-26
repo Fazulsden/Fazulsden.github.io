@@ -73,12 +73,12 @@
             <h3>Samsung Pass</h3>
             <span class="sev crit">Critical</span>
           </div>
-          <p class="cls">Exposed CI/CD credential → broken authentication</p>
-          <p>A leaked Jenkins Slack bot token was accepted as an authorized internal integration, granting admin-level access to sensitive operational channels and, through them, visibility into a significant portion of the platform's infrastructure. Responsibly disclosed on a system handling biometric data for millions of devices.</p>
+          <p class="cls">Broken access control → exposed CI/CD credential → broken auth</p>
+          <p>A broken access-control flaw exposed internal environment secrets, including a Jenkins CI/CD Slack bot token that was then accepted as an authorized internal integration. That granted admin-level access to sensitive operational channels and visibility into a significant portion of the platform's infrastructure. Responsibly disclosed on a system handling biometric data for millions of devices.</p>
           <div class="meta"><span>Platform: <b>Bugcrowd</b></span><span>Status: <b>Bounty awarded</b></span></div>
           <div class="find-proof">
-            <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/proof/samsung-report.jpg" alt="Samsung Mobile Security portal showing report I-120529, Critical, for the Samsung Pass infrastructure exposure" loading="lazy"></div>
-            <div class="cap">Report I-120529 on the Samsung Mobile Security portal · Severity: Critical</div>
+            <div class="frame"><div class="frame-bar"><i></i><i></i><i></i></div><img src="assets/img/proof/samsung-report.jpg" alt="Samsung Mobile Security portal showing report I-120529, Critical, with a 10000 USD reward for the Samsung Pass infrastructure exposure" loading="lazy"></div>
+            <div class="cap">Report I-120529 · Samsung Mobile Security portal · Critical · $10,000 reward</div>
           </div>
         </div>
         <div class="reward"><div class="amt">$10,000</div><div class="lbl">Bounty</div></div>
@@ -166,16 +166,16 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><span class="accent">02</span> — Projects</span>
-      <h2>Eleven builds, four disciplines.</h2>
-      <p class="lede">Security research from the silicon up, plus the AI, data and full-stack work behind it. Architecture diagrams show how each one is built; the e-commerce platform ships with a live UI.</p>
+      <h2>Thirteen projects, four disciplines.</h2>
+      <p class="lede">Security research from the silicon up, plus the AI, data and full-stack web work behind it. Architecture diagrams show how each one is built; the full-stack apps ship with live UI. Filter by discipline, or click any screenshot to zoom.</p>
     </div>
 
     <div class="filters reveal" id="proj-filters">
-      <button class="filter-btn active" data-filter="all">All <span class="n">11</span></button>
+      <button class="filter-btn active" data-filter="all">All <span class="n">13</span></button>
       <button class="filter-btn" data-filter="security">Security <span class="n">4</span></button>
       <button class="filter-btn" data-filter="ai">AI / ML <span class="n">3</span></button>
-      <button class="filter-btn" data-filter="data">Data &amp; Systems <span class="n">3</span></button>
-      <button class="filter-btn" data-filter="web">Web <span class="n">1</span></button>
+      <button class="filter-btn" data-filter="web">Full-Stack Web <span class="n">2</span></button>
+      <button class="filter-btn" data-filter="data">Data &amp; Systems <span class="n">4</span></button>
     </div>
 
     <!-- Featured: real screenshots -->
@@ -199,6 +199,14 @@
       </div>
     </div>
 
+    <div class="card-grid" style="margin-top:clamp(16px,2.5vw,24px)">
+      <article class="card reveal">
+        <span class="k">Full-Stack · Databases</span>
+        <h3>Student Forum Portal</h3>
+        <p>A full-stack discussion forum: a React/TypeScript frontend over a Node.js/TypeScript backend and SQLite, delivering threaded posts, comments and accounts on a normalized schema with foreign-key constraints, indexed hot columns, parameterized queries against SQL injection, and transactions for multi-step write consistency.</p>
+        <div class="tags"><span class="tag">React / TS</span><span class="tag">Node.js / TS</span><span class="tag">SQLite</span><span class="tag">SQL hardening</span></div>
+      </article>
+    </div>
     </div><!-- /web -->
 
     <!-- Security & Systems -->
@@ -352,13 +360,6 @@
       </article>
 
       <article class="card reveal">
-        <span class="k">Databases</span>
-        <h3>Student Forum Portal</h3>
-        <p>Full-stack discussion forum (React/TS over Node/TS and SQLite) with a normalized schema and foreign-key constraints, indexed hot columns, parameterized queries against SQL injection, and transactions for multi-step write consistency.</p>
-        <div class="tags"><span class="tag">React / TS</span><span class="tag">SQLite</span><span class="tag">SQL hardening</span></div>
-      </article>
-
-      <article class="card reveal">
         <span class="k">HCI / Product Design</span>
         <h3>NayaPay Wallet Redesign</h3>
         <p>Redesigned a Pakistani fintech wallet end to end — 250 high-fidelity Figma screens on an 11-component design system, plus a full mirrored Urdu right-to-left build (124 screens) across 12 flows.</p>
@@ -374,6 +375,7 @@
 
       <article class="card reveal">
         <span class="k">Embedded / Digital Logic</span>
+        <div class="card-photo"><img src="assets/img/projects/maze.jpg" alt="The autonomous maze-solving robot: chassis, IR sensors, motor driver and breadboard wiring" loading="lazy"></div>
         <h3>Autonomous Maze-Solving Robot</h3>
         <p>Two from-scratch builds of a maze-solving car on three IR sensors: one in embedded C on Arduino, one as pure combinational hardware (no MCU, no firmware) derived via Karnaugh maps into four Boolean equations. Placed 3rd of 45 teams.</p>
         <div class="tags"><span class="tag">Arduino</span><span class="tag">Digital logic</span><span class="tag">Karnaugh maps</span></div>

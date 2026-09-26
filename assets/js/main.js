@@ -59,7 +59,7 @@ if (filterBar) {
 const lightbox = document.getElementById('lightbox');
 if (lightbox) {
   const lbImg = lightbox.querySelector('img');
-  const shots = document.querySelectorAll('.gallery .frame img, .find-proof .frame img');
+  const shots = document.querySelectorAll('.gallery .frame img, .find-proof .frame img, .card-photo img');
   shots.forEach((img) => {
     img.classList.add('zoomable');
     img.addEventListener('click', () => {
