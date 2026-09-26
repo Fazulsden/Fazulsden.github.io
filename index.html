@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fazul Al Rehman — Security Researcher</title>
+<meta name="description" content="Offensive security researcher and full-time bug bounty hunter. Critical vulnerabilities reported to enterprise, e-commerce, gaming and Web3 targets, plus low-level security research on confidential VMs and kernel cryptography.">
+<meta property="og:title" content="Fazul Al Rehman — Security Researcher">
+<meta property="og:description" content="Bug bounty hunter and vulnerability researcher. Web, cloud and Web3.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fazulsden.github.io/">
+<link rel="canonical" href="https://fazulsden.github.io/">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top">
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top"><span class="sig">~/</span>fazul<span class="cursor" aria-hidden="true"></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">MENU</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#findings">Findings</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <p class="term-line"><span class="dim">$</span> whoami</p>
+    <span class="eyebrow"><span class="accent">Offensive Security</span> — Vulnerability Research &amp; Bug Bounty</span>
+    <h1>I break <span class="stroke">authentication</span>, access control and trust boundaries — then help fix them.</h1>
+    <p class="lede">Full-time bug bounty hunter and security researcher. I've reported critical vulnerabilities to enterprise, e-commerce and gaming targets, run large-scale exposure research, and study security at the lowest levels: confidential-VM attacks and kernel cryptography.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#findings">View findings</a>
+      <a class="btn btn-ghost" href="assets/cv/Fazul-Al-Rehman-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <span class="dot-badge">Open to security roles &amp; engagements</span>
+    </div>
+  </div>
+</header>
+
+<div class="proof reveal">
+  <div class="container">
+    <div class="metric"><span class="num">$10k</span><span class="cap">Top single bounty</span></div>
+    <div class="metric"><span class="num">Critical</span><span class="cap">Highest severity reported</span></div>
+    <div class="metric"><span class="num">20k<small>+</small></span><span class="cap">Exposed secrets surfaced</span></div>
+    <div class="metric"><span class="num">Web3</span><span class="cap">Smart-contract auditing</span></div>
+  </div>
+</div>
+
+<!-- ============ FINDINGS ============ -->
+<section id="findings">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="accent">01</span> — Selected Findings</span>
+      <h2>Reported, triaged, and fixed.</h2>
+      <p class="lede">A selection of disclosed work. Some targets are described by sector while coordinated disclosure is in progress — the full record is available on request under NDA.</p>
+    </div>
+
+    <div class="find-list">
+
+      <article class="find reveal">
+        <span class="idx">01</span>
+        <div class="body">
+          <div class="top">
+            <h3>Samsung Pass</h3>
+            <span class="sev crit">Critical</span>
+          </div>
+          <p class="cls">Exposed CI/CD credential → broken authentication</p>
+          <p>A leaked Jenkins Slack bot token was accepted as an authorized internal integration, granting admin-level access to sensitive operational channels and, through them, visibility into a significant portion of the platform's infrastructure. Responsibly disclosed on a system handling biometric data for millions of devices.</p>
+          <div class="meta"><span>Platform: <b>Bugcrowd</b></span><span>Status: <b>Bounty awarded</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">$10,000</div><div class="lbl">Bounty</div></div>
+      </article>
+
+      <article class="find reveal">
+        <span class="idx">02</span>
+        <div class="body">
+          <div class="top">
+            <h3>A Fortune 500 retailer's seller platform</h3>
+            <span class="sev crit">Critical</span>
+          </div>
+          <p class="cls">Broken access control (IDOR) → payment redirection</p>
+          <p>An access-control flaw in a marketplace seller portal allowed unauthorized read access and could reroute seller payments, placing a large volume of payment flow at risk. Reported through the vendor's security channel.</p>
+          <div class="meta"><span>Class: <b>IDOR</b></span><span>Status: <b>Disclosure in progress</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">$50M</div><div class="lbl">Payment flow at risk</div></div>
+      </article>
+
+      <article class="find reveal">
+        <span class="idx">03</span>
+        <div class="body">
+          <div class="top">
+            <h3>Large-scale secret-exposure research</h3>
+            <span class="sev high">High impact</span>
+          </div>
+          <p class="cls">Sensitive data exposure at scale</p>
+          <p>Systematic research surfaced 20,000+ exposed private keys and API secrets across major providers (AWS, Stripe, Twilio, Razorpay, OpenAI, Shopify, GitHub and others). Aggregated GitHub keys exposed auto-deploying access to 1,600+ private repositories. Affected organizations are being notified through coordinated disclosure.</p>
+          <div class="meta"><span>Scope: <b>20,000+ secrets</b></span><span>Reach: <b>1,600+ repos</b></span><span>Status: <b>Coordinated disclosure</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">20k+</div><div class="lbl">Secrets surfaced</div></div>
+      </article>
+
+      <article class="find reveal">
+        <span class="idx">04</span>
+        <div class="body">
+          <div class="top">
+            <h3>A major game publisher</h3>
+            <span class="sev high">High</span>
+          </div>
+          <p class="cls">Account-recovery authentication bypass</p>
+          <p>A security-question bypass in an account-recovery flow allowed authentication without the legitimate answers. Reported to the vendor.</p>
+          <div class="meta"><span>Class: <b>Auth bypass</b></span><span>Status: <b>Reported</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">Auth</div><div class="lbl">Bypass</div></div>
+      </article>
+
+      <article class="find reveal">
+        <span class="idx">05</span>
+        <div class="body">
+          <div class="top">
+            <h3>A global hardware vendor</h3>
+            <span class="sev med">Medium</span>
+          </div>
+          <p class="cls">Broken access control (document authorization)</p>
+          <p>An authorization bypass allowed retrieval of invoice PDFs belonging to other customers through predictable enumeration. Reported to the vendor.</p>
+          <div class="meta"><span>Class: <b>Access control</b></span><span>Status: <b>Reported</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">IDOR</div><div class="lbl">Document access</div></div>
+      </article>
+
+      <article class="find reveal">
+        <span class="idx">06</span>
+        <div class="body">
+          <div class="top">
+            <h3>IBA Karachi — university portals</h3>
+            <span class="sev crit">Critical</span>
+            <span class="sev ok">Remediated</span>
+          </div>
+          <p class="cls">Data exposure + authentication bypass</p>
+          <p>Multiple critical issues across the university's portals, including a database exposure leaking confidential personal records and an authentication bypass reaching super-admin level. Responsibly disclosed to administration; the finding prompted a full migration to a new portal now in production.</p>
+          <div class="meta"><span>Disclosure: <b>Direct</b></span><span>Status: <b>Fixed — portal replaced</b></span></div>
+        </div>
+        <div class="reward"><div class="amt">Fixed</div><div class="lbl">Outcome</div></div>
+      </article>
+
+    </div>
+
+    <p class="disclosure-note reveal">Findings follow responsible-disclosure practice. Targets under active or coordinated disclosure are described by sector and severity only. Reproduction detail is never published; it is shared with the affected vendor and, on request, under NDA.</p>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="accent">02</span> — Research &amp; Projects</span>
+      <h2>Security from the silicon up.</h2>
+      <p class="lede">Beyond bug bounty: low-level security research, applied cryptography, and Web3 auditing.</p>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card reveal">
+        <span class="k">Confidential Computing</span>
+        <h3>Attacking &amp; Defending Confidential VMs</h3>
+        <p>Built a testbed on AMD EPYC to reproduce hypervisor interrupt-injection attacks (HECKLER class) against AMD SEV-SNP and Intel TDX trusted execution environments, then proposed <span class="mono">Guest_Defense</span> — a guest-side mitigation validating that incoming interrupts match expected CPU state. Included reverse-engineering production Windows software to map control flow and licensing behavior.</p>
+        <div class="tags"><span class="tag">SEV-SNP / TDX</span><span class="tag">QEMU / QMP</span><span class="tag">Reverse engineering</span><span class="tag">Python</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Systems / Cryptography</span>
+        <h3>SHA-256 across kernel, user space &amp; syscalls</h3>
+        <p>Implemented SHA-256 three ways — a loadable kernel module over the kernel crypto API, a user-space build over OpenSSL, and a custom system call — across three purpose-built Linux kernels. Benchmarked the boundary-crossing overhead and analyzed the attack surface of running crypto in ring 0 versus user space.</p>
+        <div class="tags"><span class="tag">Linux kernel</span><span class="tag">C</span><span class="tag">Crypto API</span><span class="tag">Ring 0</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">Web3 Security</span>
+        <h3>Smart-contract auditing</h3>
+        <p>Ongoing auditing of smart contracts through Cantina and Immunefi — reviewing DeFi contract logic for access-control, accounting and oracle-manipulation bug classes, and building Foundry proofs of concept.</p>
+        <div class="tags"><span class="tag">Solidity</span><span class="tag">Foundry</span><span class="tag">Cantina</span><span class="tag">Immunefi</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="k">CTF &amp; Community</span>
+        <h3>CTF authoring &amp; applied crypto</h3>
+        <p>Designed and authored the cybersecurity-track CTF challenges for the IBA Data Science Society and judged submissions. Completed the Symmetric Ciphers, Diffie-Hellman and Hash Functions tracks on CryptoHack.</p>
+        <div class="tags"><span class="tag">CTF design</span><span class="tag">CryptoHack</span><span class="tag">Applied cryptography</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="accent">03</span> — Capabilities</span>
+      <h2>The toolkit.</h2>
+    </div>
+    <div class="reveal">
+      <div class="stackrow"><span class="stacklabel">Offensive</span><div class="tags"><span class="tag">Web app pentesting</span><span class="tag">Access control / IDOR</span><span class="tag">Auth bypass</span><span class="tag">Recon &amp; dorking</span><span class="tag">Secret exposure</span><span class="tag">Bug bounty</span></div></div>
+      <div class="stackrow"><span class="stacklabel">Low-level</span><div class="tags"><span class="tag">Reverse engineering</span><span class="tag">Binary analysis</span><span class="tag">QEMU</span><span class="tag">TEEs (SEV-SNP / TDX)</span><span class="tag">Linux kernel</span></div></div>
+      <div class="stackrow"><span class="stacklabel">Web3</span><div class="tags"><span class="tag">Solidity auditing</span><span class="tag">Foundry PoCs</span><span class="tag">DeFi bug classes</span></div></div>
+      <div class="stackrow"><span class="stacklabel">Crypto</span><div class="tags"><span class="tag">Applied cryptography</span><span class="tag">SHA-2 / hashing</span><span class="tag">Diffie-Hellman</span><span class="tag">Symmetric ciphers</span></div></div>
+      <div class="stackrow"><span class="stacklabel">Languages</span><div class="tags"><span class="tag">Python</span><span class="tag">C / C++</span><span class="tag">JavaScript / TypeScript</span><span class="tag">SQL</span><span class="tag">Solidity</span></div></div>
+      <div class="stackrow"><span class="stacklabel">Also builds</span><div class="tags"><span class="tag">AI / ML (PyTorch)</span><span class="tag">Data pipelines (Spark / Kafka)</span><span class="tag">Full-stack (React / Node / Django)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="accent">04</span> — About</span>
+      <h2>Finds the gap, writes the report.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-bio reveal">
+        <p>I'm Fazul, an <span class="hl">offensive security researcher and full-time bug bounty hunter</span>. My work sits where access control and trust boundaries break down — the leaked credential accepted as an insider, the parameter that should have been checked, the recovery flow that trusts the wrong thing.</p>
+        <p>I've reported critical issues to enterprise, e-commerce and gaming targets, including a <span class="hl">critical Samsung Pass finding rewarded through Bugcrowd</span>, and I run large-scale exposure research now in coordinated disclosure. I also go lower: interrupt-injection attacks on confidential VMs, kernel-level cryptography, and Web3 contract auditing.</p>
+        <p>BS Computer Science, Institute of Business Administration (IBA) Karachi. I authored my university's CTF challenges, and I disclosed critical bugs in its own portals that led to a full rebuild.</p>
+        <div class="hero-ctas" style="margin-top:6px">
+          <a class="btn btn-primary" href="assets/cv/Fazul-Al-Rehman-CV.pdf" target="_blank" rel="noopener">View CV ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/Fazulsden" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="card-term reveal">
+        <div class="term-bar"><i></i><i></i><i></i><span>fazul@research: ~</span></div>
+        <div class="term-body">
+          <div class="row"><span class="p">$</span> whoami</div>
+          <div class="row"><span class="v">fazul_al_rehman</span></div>
+          <div class="row" style="margin-top:8px"><span class="p">$</span> cat profile.json</div>
+          <div class="row"><span class="k">role</span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span class="v">"security researcher"</span></div>
+          <div class="row"><span class="k">focus</span>&nbsp;&nbsp;&nbsp;:&nbsp;<span class="v">"web · cloud · web3 · low-level"</span></div>
+          <div class="row"><span class="k">edu</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span class="v">"BS CS, IBA Karachi"</span></div>
+          <div class="row"><span class="k">based</span>&nbsp;&nbsp;&nbsp;:&nbsp;<span class="v">"Pakistan · remote"</span></div>
+          <div class="row"><span class="k">status</span>&nbsp;&nbsp;:&nbsp;<span class="v">"open to work"</span></div>
+          <div class="row" style="margin-top:8px"><span class="p">$</span> <span style="color:var(--acc)">_</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container reveal">
+    <span class="eyebrow"><span class="accent">05</span> — Contact</span>
+    <h2 style="margin-top:16px">Have a target,<br>or a role?</h2>
+    <div class="contact-row">
+      <a class="btn btn-primary" href="mailto:Fazulrehmannizamanin@gmail.com">Fazulrehmannizamanin@gmail.com</a>
+      <a class="btn btn-ghost" href="assets/cv/Fazul-Al-Rehman-CV.pdf" target="_blank" rel="noopener">View CV ↗</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/fazulrehmannizamani/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Fazulsden" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="contact-meta">
+      <span style="color:var(--text)">Fazul Al Rehman</span>
+      <span>Offensive security researcher · bug bounty</span>
+      <span>Pakistan · works across time zones</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Fazul Al Rehman</span>
+    <span class="mono">built in the terminal</span>
+    <a href="#top">back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
