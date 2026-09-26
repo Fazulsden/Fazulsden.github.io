@@ -247,6 +247,11 @@ section { padding-block: clamp(66px, 8.5vw, 120px); }
   .find .reward .amt { font-size: 22px; }
 }
 
+.find-proof { margin-top: 4px; max-width: 560px; }
+.find-proof .frame { border-radius: 9px; }
+.find-proof .cap { margin-top: 8px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); display: flex; align-items: center; gap: 8px; }
+.find-proof .cap::before { content: "✓"; color: var(--acc); }
+
 .disclosure-note {
   margin-top: clamp(26px, 4vw, 40px); padding: 18px 20px; border: 1px dashed var(--line-2);
   border-radius: 12px; font-family: var(--font-mono); font-size: 13px; color: var(--text-3);
