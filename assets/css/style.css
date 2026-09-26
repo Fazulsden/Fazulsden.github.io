@@ -40,6 +40,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
 
 body {
   margin: 0;
@@ -112,6 +113,7 @@ section { padding-block: clamp(66px, 8.5vw, 120px); }
   cursor: pointer;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn { overflow-wrap: anywhere; }
 .btn-primary { background: var(--acc); color: #05130B; }
 .btn-primary:hover { background: color-mix(in srgb, var(--acc) 85%, #fff); }
 .btn-ghost { border-color: var(--line-2); color: var(--text); }
@@ -361,13 +363,55 @@ footer { border-top: 1px solid var(--line); padding-block: 26px; }
 .dg-arrowhead { fill: var(--acc); }
 .dg-acc { fill: var(--acc); font-family: var(--font-mono); }
 
-/* ---------- Reveal ---------- */
+/* ---------- Project filter bar ---------- */
 
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.in { opacity: 1; transform: none; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); }
+.filter-btn {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em;
+  color: var(--text-3); background: var(--bg-2); border: 1px solid var(--line-2);
+  border-radius: 8px; padding: 9px 16px; cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.filter-btn:hover { color: var(--text); border-color: var(--text-3); }
+.filter-btn.active { color: #05130B; background: var(--acc); border-color: var(--acc); }
+.filter-btn .n { opacity: .6; margin-left: 6px; }
+.proj-group[hidden] { display: none; }
+
+/* ---------- Lightbox ---------- */
+
+.zoomable { cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  background: color-mix(in srgb, #05070A 92%, transparent);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  padding: clamp(16px, 4vw, 56px); place-items: center;
+}
+.lightbox.open { display: grid; }
+.lightbox img { max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; border: 1px solid var(--line-2); box-shadow: 0 40px 90px rgba(0,0,0,.6); }
+.lightbox-close {
+  position: fixed; top: 18px; right: 20px; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--bg-2); border: 1px solid var(--line-2); color: var(--text);
+  font-size: 20px; line-height: 1; cursor: pointer; display: grid; place-items: center;
+}
+.lightbox-close:hover { border-color: var(--acc); color: var(--acc); }
+.lightbox-hint { position: fixed; bottom: 18px; left: 0; right: 0; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
+
+/* ---------- Reveal (fail-safe: hidden only when JS is active) ---------- */
+
+.js-anim .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.js-anim .reveal.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .js-anim .reveal { opacity: 1; transform: none; transition: none; }
   .dot-badge::before, .nav-brand .cursor { animation: none; }
 }
+
+/* ---------- Overflow guards (grid tracks must not size to max-content) ---------- */
+.hero .container, .section-head { grid-template-columns: minmax(0, 1fr); }
+.proof .container { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 720px) { .proof .container { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 780px) { .card-grid { grid-template-columns: minmax(0, 1fr); } }
+.card, .feature, .find, .find .body, .proj-group { min-width: 0; }
+.card .diagram svg, .frame img, .gallery img { max-width: 100%; }

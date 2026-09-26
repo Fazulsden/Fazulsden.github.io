@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body id="top">
 
@@ -170,7 +170,16 @@
       <p class="lede">Security research from the silicon up, plus the AI, data and full-stack work behind it. Architecture diagrams show how each one is built; the e-commerce platform ships with a live UI.</p>
     </div>
 
+    <div class="filters reveal" id="proj-filters">
+      <button class="filter-btn active" data-filter="all">All <span class="n">11</span></button>
+      <button class="filter-btn" data-filter="security">Security <span class="n">4</span></button>
+      <button class="filter-btn" data-filter="ai">AI / ML <span class="n">3</span></button>
+      <button class="filter-btn" data-filter="data">Data &amp; Systems <span class="n">3</span></button>
+      <button class="filter-btn" data-filter="web">Web <span class="n">1</span></button>
+    </div>
+
     <!-- Featured: real screenshots -->
+    <div class="proj-group" data-cat="web">
     <div class="grouplabel reveal">Full-Stack Web</div>
     <div class="feature reveal">
       <div class="feature-info">
@@ -190,7 +199,10 @@
       </div>
     </div>
 
+    </div><!-- /web -->
+
     <!-- Security & Systems -->
+    <div class="proj-group" data-cat="security">
     <div class="grouplabel reveal">Security &amp; Systems Research</div>
     <div class="card-grid">
 
@@ -265,7 +277,10 @@
 
     </div>
 
+    </div><!-- /security -->
+
     <!-- AI / ML -->
+    <div class="proj-group" data-cat="ai">
     <div class="grouplabel reveal">AI / Machine Learning</div>
     <div class="card-grid">
 
@@ -309,7 +324,10 @@
 
     </div>
 
+    </div><!-- /ai -->
+
     <!-- Data, systems & hardware -->
+    <div class="proj-group" data-cat="data">
     <div class="grouplabel reveal">Data, Systems &amp; Hardware</div>
     <div class="card-grid">
 
@@ -362,6 +380,7 @@
       </article>
 
     </div>
+    </div><!-- /data -->
   </div>
 </section>
 
@@ -445,6 +464,12 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="">
+  <div class="lightbox-hint">click anywhere or press Esc to close</div>
+</div>
+
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
